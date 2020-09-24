@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../actions'
-
+import Swal from 'sweetalert2'
 import PageContainer from '../PageContainer/PageContainer'
 import TimerForm from '../../components/TimerForm/timerform'
 
@@ -15,9 +15,15 @@ class NewSession extends React.Component {
       createdAt: new Date().toString(),
     })
     return this.props.postNewTimerSession(newValues, () => {
-      alert(
-        'Your session has been saved!\n\nPlease view your sessions by clicking on the `View Saved Sessions` button on the left.'
-      )
+      
+      Swal.fire({
+        title: 'Your session has been saved!',
+        text: 'Please view your sessions by clicking on the `View Saved Sessions` button on the left.',
+        icon: 'success',
+        timerProgressBar:true,
+        timer: 2*1000,
+      })
+      
       this.props.getTimerSessions()
     })
   }
