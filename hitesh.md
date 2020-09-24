@@ -10,6 +10,7 @@
 - [x] Outline next steps to make this app production ready. 
 
 **Observations**
+
 The bug with save session was #5afb68f 
 
 Added delete session on inMemory database and expresss routers as well as the react components on the client side. 
