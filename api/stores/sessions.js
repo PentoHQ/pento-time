@@ -14,5 +14,9 @@ export default function createSessionStore({ db }) {
     listTimers() {
       return db.list()
     },
+
+    deleteTimer(sessionID){
+      return db.delete(sessionID)
+    }
   }
 }
