@@ -10,7 +10,7 @@ export function postNewTimerSession(data, callback) {
         callback()
       })
       .catch((err) => {
-        console.log(err)
+        callback(err)
       })
   }
 }

@@ -1,3 +1,13 @@
+# Production next steps:
+- [ ] Split the docker configuration for the API and Client (if docker is desired deployment implementation)
+- [ ] Abstract relevant variables (e.g. ports, database creds) to environment level variables
+- [ ] Implement a validation middleware for the API
+- [ ] Implement tests for both apps
+- [ ] Implement a CI/CD pipeline
+- [ ] Implement linting
+- [ ] Establish and implement a Client to API auth mechanism
+- [ ] Consider using a production-tuned process manager (pm2?)
+
 # Pento Tech Challenge - Time tracker
 
 Hi 👋  

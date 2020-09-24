@@ -3,14 +3,14 @@ import express from 'express'
 export default function createRouter({ sessionStore }) {
   const router = express.Router()
 
-  router.post('/', (req, res) => {
+  router.post('/', async (req, res) => {
     const timerInput = req.body
-    const timer = sessionStore.createTimer(timerInput)
+    const timer = await sessionStore.createTimer(timerInput)
     return res.send({ timer })
   })
 
-  router.get('/', (req, res) => {
-    const timers = sessionStore.listTimers()
+  router.get('/', async (req, res) => {
+    const timers = await sessionStore.listTimers()
     return res.send(timers)
   })
 

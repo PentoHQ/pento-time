@@ -1,2 +1,2 @@
-import inMemory from './inMemory'
-export { inMemory as createInMemoryDB }
+import mysql from './mysql'
+export { mysql as persistentStore }

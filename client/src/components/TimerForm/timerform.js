@@ -25,7 +25,9 @@ class TimerForm extends React.Component {
           start: 0,
           name: null,
         })
-      )
+      ).catch((err) => {
+        console.log(err)
+      })
     }
   }
 

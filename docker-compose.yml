@@ -1,6 +1,9 @@
 version: '3'
 services:
   server:
+    depends_on:
+      - database
+    restart: on-failure
     image: node:lts-slim
     volumes:
       - ./api:/src
@@ -16,3 +19,14 @@ services:
     command: ['npm', 'start']
     ports:
       - 3000:3000
+  database:
+    image: mysql:5.7
+    volumes:
+      - mysql_db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: "sessions"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - 3306
+volumes:
+  mysql_db:
