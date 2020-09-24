@@ -7,6 +7,7 @@
 - [ ] Implement linting
 - [ ] Establish and implement a Client to API auth mechanism
 - [ ] Consider using a production-tuned process manager (pm2?)
+- [ ] Implement server level error handling
 
 # Pento Tech Challenge - Time tracker
 
