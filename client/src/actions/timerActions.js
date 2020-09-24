@@ -15,6 +15,20 @@ export function postNewTimerSession(data, callback) {
   }
 }
 
+export function deleteTimerSession(key, index,callback){
+  return function (dispatch) {
+    return axios
+      .delete(TIMER_SESSIONS_URL+'/'+key)
+      .then((response) => {
+        dispatch({ type: DELETE_TIMER_SESSIONS, index:index})
+        callback(true)
+      })
+      .catch((err) => {
+        console.error(err)
+        callback(false)
+      })
+  }
+}
 
 export function getTimerSessions() {
   return function (dispatch) {

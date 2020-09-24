@@ -4,11 +4,14 @@ import TimerSessionCard from './timersessioncard'
 
 class TimerSessionsView extends React.Component {
   renderTimeSessions(sessions) {
+    
     if (sessions.length > 0) {
-      return sessions.map((session) => {
+      return sessions.map((session, index) => {
         return (
           <TimerSessionCard
             key={session.id}
+            id={session.id}
+            index={index}
             name={session.name}
             time={session.time}
             createdAt={session.createdAt}
