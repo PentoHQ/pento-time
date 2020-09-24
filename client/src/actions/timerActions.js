@@ -1,10 +1,10 @@
 import axios from '../utils/axios'
 import { TIMER_SESSIONS_URL } from '../constants/timer/endpoints'
-import { SET_TIMER_SESSIONS } from '../constants/timer/reducerTypes'
+import { DELETE_TIMER_SESSIONS,SET_TIMER_SESSIONS } from '../constants/timer/reducerTypes'
 
 export function postNewTimerSession(data, callback) {
   return function (dispatch) {
-    axios
+    return axios
       .post(TIMER_SESSIONS_URL, data)
       .then((response) => {
         callback()
@@ -15,9 +15,10 @@ export function postNewTimerSession(data, callback) {
   }
 }
 
+
 export function getTimerSessions() {
   return function (dispatch) {
-    axios
+    return axios
       .get(TIMER_SESSIONS_URL)
       .then((response) => {
         dispatch({ type: SET_TIMER_SESSIONS, data: response.data })

@@ -18,13 +18,17 @@ class TimerForm extends React.Component {
         {},
         { time: this.state.time, name: this.state.name }
       )
-      this.props.onSubmit(newValues).then(() =>
+      
+      //#BUG Promise was not being retuned from timerActions.js
+      this.props.onSubmit(newValues).then((s) =>
+        
         this.setState({
           isOn: false,
           time: 0,
           start: 0,
           name: null,
         })
+      
       )
     }
   }
