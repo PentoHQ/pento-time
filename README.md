@@ -1,6 +1,6 @@
 # Pento Tech Challenge - Time tracker
 
-Hi 👋  
+Hi 👋
 Thanks for taking the time to do this challenge.
 
 The time tracker app is a simple app for tracking time spent on work for freelancers. You can start a new time tracking session, name it and save it.
@@ -41,3 +41,19 @@ Before getting started you will need Docker, Docker Compose and Node on your sys
 - Go to the root directory and run `docker-compose up`
 
 This starts both the client and the server with automatic reloading when saving.
+
+## Next steps to make app production ready
+
+### Must haves
+- Add a persistent database for the application
+- Implement authentication and access control logic, so users can identify themselves and only access their resources
+- Implement validation for the API, including a coherent definition of response status codes
+- Implement proper logging for the API
+- Improve error handling on the Client
+- Write unit and acceptance tests for both services
+- Implement and setup a CI/CD pipeline for test and deployment automation
+
+### Nice to haves
+- Implement the logic to use environment variables
+- Separate the docker configuration for each service
+- Add linting in the CI/CD pipeline
