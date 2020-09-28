@@ -14,5 +14,9 @@ export default function createSessionStore({ db }) {
     list() {
       return db.list()
     },
+
+    delete(id) {
+      db.delete(id)
+    },
   }
 }

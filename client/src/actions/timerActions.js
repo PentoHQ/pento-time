@@ -28,3 +28,16 @@ export function getTimerSessions() {
       })
   }
 }
+
+export function deleteTimerSession(id, callback) {
+  return function (_dispatch) {
+    axios
+      .delete(`${TIMER_SESSIONS_URL}/${id}`)
+      .then((_response) => {
+        callback()
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+}

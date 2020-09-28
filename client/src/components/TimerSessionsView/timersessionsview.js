@@ -9,6 +9,7 @@ class TimerSessionsView extends React.Component {
         return (
           <TimerSessionCard
             key={session.id}
+            id={session.id}
             name={session.name}
             time={session.time}
             createdAt={session.createdAt}

@@ -14,5 +14,10 @@ export default function createRouter({ sessionStore }) {
     return res.send(sessions)
   })
 
+  router.delete('/:id', (req, res) => {
+    sessionStore.delete(req.params.id)
+    return res.send()
+  })
+
   return router
 }

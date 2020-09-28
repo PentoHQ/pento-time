@@ -7,5 +7,6 @@ export default function createDB(table) {
       Object.keys(db)
         .filter((x) => x.startsWith(table))
         .map((x) => ({ id: x.replace(`${table}-`,''), ...db[x] })),
+    delete: (id) => delete db[`${table}-${id}`],
   }
 }
