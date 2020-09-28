@@ -30,8 +30,6 @@ const TimerSessionCard = (props) => {
   </div>
 }
 
-const mapStateToProps = () => {
-  return {}
-}
+const mapStateToProps = () => ({})
 
 export default connect(mapStateToProps, actions)(TimerSessionCard)
