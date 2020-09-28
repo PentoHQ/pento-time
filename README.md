@@ -46,14 +46,15 @@ This starts both the client and the server with automatic reloading when saving.
 
 ### Must haves
 - Add a persistent database for the application
-- Implement authentication and access control logic, so users can identify themselves and only access their resources
+- Implement authentication and access control logic, so users can identify themselves and only access their resources (database changes needed)
 - Implement validation for the API, including a coherent definition of response status codes
 - Implement proper logging for the API
 - Improve error handling on the Client
 - Write unit and acceptance tests for both services
 - Implement and setup a CI/CD pipeline for test and deployment automation
+- Implement the logic to use environment variables and replace hardcoded constants
 
 ### Nice to haves
-- Implement the logic to use environment variables
-- Separate the docker configuration for each service
-- Add linting in the CI/CD pipeline
+- Have a separate docker configuration for each service to be able to deploy services independently
+- Add a linting process to the CI/CD pipeline
+- Replace JavaScript alert windows
