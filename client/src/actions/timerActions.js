@@ -23,8 +23,8 @@ export function getTimerSessions() {
       .then((response) => {
         dispatch({ type: SET_TIMER_SESSIONS, data: response.data })
       })
-      .catch((err) => {
-        console.error(err)
+      .catch((error) => {
+        console.error(error)
       })
   }
 }
