@@ -20,10 +20,12 @@ class NewSession extends React.Component {
           const reason = Error("Session not created")
           return reject(reason)
         }
+        this.props.getTimerSessions()
+
         alert(
           `Your session ${newSession.name} has been saved!\n\nPlease view your sessions by clicking on the 'View Saved Sessions' button on the left.`
         )
-        this.props.getTimerSessions()
+
         resolve()
       })
     })

@@ -6,10 +6,11 @@ import Utils from '../../utils/utils'
 const TimerSessionCard = (props) => {
   const deleteSession = () => {
     props.deleteTimerSession(props.id, () => {
+      props.getTimerSessions()
+
       alert(
         'Session '+ props.name +' has been deleted!'
       )
-      props.getTimerSessions()
     })
   }
 
@@ -30,6 +31,4 @@ const TimerSessionCard = (props) => {
   </div>
 }
 
-const mapStateToProps = () => ({})
-
-export default connect(mapStateToProps, actions)(TimerSessionCard)
+export default connect(null, actions)(TimerSessionCard)
