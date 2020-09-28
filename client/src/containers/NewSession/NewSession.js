@@ -21,7 +21,7 @@ class NewSession extends React.Component {
           return reject(reason)
         }
         alert(
-          `Your session ${newSession.name} has been saved!\n\nPlease view your sessions by clicking on the View Saved Sessions button on the left.`
+          `Your session ${newSession.name} has been saved!\n\nPlease view your sessions by clicking on the 'View Saved Sessions' button on the left.`
         )
         this.props.getTimerSessions()
         resolve()

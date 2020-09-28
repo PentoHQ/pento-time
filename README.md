@@ -57,4 +57,4 @@ This starts both the client and the server with automatic reloading when saving.
 ### Nice to haves
 - Have a separate docker configuration for each service to be able to deploy services independently
 - Add a linting process to the CI/CD pipeline
-- Replace JavaScript alert windows
+- Replace JavaScript alert windows used in the Client
