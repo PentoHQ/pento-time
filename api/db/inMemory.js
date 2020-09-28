@@ -1,13 +1,11 @@
 const db = {}
 export default function createDB(table) {
   return {
-    set: (key, value) => {
-      db[`${table}-${key}`] = value
-    },
-    get: (key) => ({ id: key, ...db[`${table}-${key}`] }),
+    set: (id, obj) => db[`${table}-${id}`] = obj,
+    get: (id) => ({ id: id, ...db[`${table}-${id}`] }),
     list: () =>
       Object.keys(db)
         .filter((x) => x.startsWith(table))
-        .map((x) => ({ id: x, ...db[x] })),
+        .map((x) => ({ id: x.replace(`${table}-`,''), ...db[x] })),
   }
 }

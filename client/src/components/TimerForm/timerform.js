@@ -8,7 +8,7 @@ class TimerForm extends React.Component {
       isOn: false,
       time: 0,
       start: 0,
-      name: null,
+      name: "",
     }
   }
 
@@ -23,9 +23,9 @@ class TimerForm extends React.Component {
           isOn: false,
           time: 0,
           start: 0,
-          name: null,
-        })
-      )
+          name: "",
+        }),
+      ).catch((error) => console.error(error));
     }
   }
 
@@ -67,6 +67,7 @@ class TimerForm extends React.Component {
           <input
             className="form-control"
             name="name"
+            value={this.state.name}
             placeholder="Enter Session Name"
             onChange={this.onChangeName.bind(this)}
           />

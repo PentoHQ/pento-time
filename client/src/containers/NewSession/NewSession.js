@@ -14,11 +14,18 @@ class NewSession extends React.Component {
     const newValues = Object.assign({}, values, {
       createdAt: new Date().toString(),
     })
-    return this.props.postNewTimerSession(newValues, () => {
-      alert(
-        'Your session has been saved!\n\nPlease view your sessions by clicking on the `View Saved Sessions` button on the left.'
-      )
-      this.props.getTimerSessions()
+    return new Promise((resolve, reject) => {
+      this.props.postNewTimerSession(newValues, (newSession) => {
+        if (!newSession) {
+          const reason = Error("Session not created")
+          return reject(reason)
+        }
+        alert(
+          `Your session ${newSession.name} has been saved!\n\nPlease view your sessions by clicking on the View Saved Sessions button on the left.`
+        )
+        this.props.getTimerSessions()
+        resolve()
+      })
     })
   }
 
