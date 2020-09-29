@@ -1,5 +1,3 @@
-import e from "express";
-
 const db = {}
 export default function createDB(table) {
   return {

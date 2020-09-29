@@ -8,26 +8,26 @@ class TimerForm extends React.Component {
       isOn: false,
       time: 0,
       start: 0,
-      name: null,
+      name: "",
     }
   }
 
   submit() {
-    if (this.state.time !== 0 && this.state.name !== null) {
+    if (this.state.time !== 0 && this.state.name !== "") {
       const newValues = Object.assign(
         {},
         { time: this.state.time, name: this.state.name }
       )
       
-      //#BUG Promise was not being retuned from timerActions.js
-      this.props.onSubmit(newValues).then((s) =>
+      this.props.onSubmit(newValues).then(() => {
         
         this.setState({
           isOn: false,
           time: 0,
           start: 0,
-          name: null,
+          name: "",
         })
+      }
       
       )
     }
@@ -72,6 +72,7 @@ class TimerForm extends React.Component {
             className="form-control"
             name="name"
             placeholder="Enter Session Name"
+            value={this.state.name}
             onChange={this.onChangeName.bind(this)}
           />
         </div>
