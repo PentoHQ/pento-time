@@ -3,8 +3,8 @@ import { TIMER_SESSIONS_URL } from '../constants/timer/endpoints'
 import { SET_TIMER_SESSIONS } from '../constants/timer/reducerTypes'
 
 export function postNewTimerSession(data, callback) {
-  return function (dispatch) {
-    axios
+  return async function (dispatch) {
+    return axios
       .post(TIMER_SESSIONS_URL, data)
       .then((response) => {
         callback()
