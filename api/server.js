@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import pinoLogger from 'express-pino-logger'
 import createRouter from './routes'
-import { createInMemoryDB } from './db'
+import { createLocalDb } from './db'
 import { createSessionStore } from './stores'
 
 const port = process.env.PORT || 3001
@@ -14,7 +14,7 @@ app.use(cors())
 app.use(pino)
 app.use(bodyParser.json())
 
-const sessionStore = createSessionStore({ db: createInMemoryDB('sessions') })
+const sessionStore = createSessionStore({ db: createLocalDb('sessions') })
 const apiRouter = createRouter({ sessionStore })
 
 app.use('/api', apiRouter)

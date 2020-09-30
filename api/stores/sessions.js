@@ -2,16 +2,16 @@ import { v4 } from 'uuid'
 
 export default function createSessionStore({ db }) {
   return {
-    createTimer(sessionInput) {
+    async createTimer(sessionInput) {
       const id = v4()
       if (sessionInput.id) {
         id = sessionInput.id
       }
-      db.set(id, sessionInput)
-      return db.get(id)
+      await db.set(id, sessionInput)
+      return await db.get(id)
     },
 
-    listTimers() {
+    async listTimers() {
       return db.list()
     },
   }

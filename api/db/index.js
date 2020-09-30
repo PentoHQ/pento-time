@@ -1,2 +1,2 @@
-import inMemory from './inMemory'
-export { inMemory as createInMemoryDB }
+import localDb from './localDb'
+export { localDb as createLocalDb }

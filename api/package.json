@@ -9,6 +9,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-pino-logger": "^5.0.0",
+    "sqlite": "^4.0.15",
+    "sqlite3": "^5.0.0",
     "standard": "^14.3.4",
     "uuid": "^8.3.0"
   },
