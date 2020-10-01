@@ -19,6 +19,22 @@ Note that the app is a beta version on purpose.
 
 Once again, thanks for taking the time to perform this task. Below follows some documentation on the app and how to get started.
 
+## production readyness
+In order to run the project in production the following steps have to be taken:
+- besides the existing readme, add some more architectural docs
+  - define contracts between front and backend (pact?)
+  - dataflow diagram
+- user authentication & external session store of sorts i.e. redis
+- proper error handling and use the pino logger levels
+- use a real external database engine like postgres
+- add instrumentation to be able to properly track request and visualize metrics
+- run npm build inside docker container; my dev machine is linux, so building sqlite outside of the container works for me but if you, for instance, develop on windows you'll need to rebuild inside the container on linux
+- add unit and integration tests
+- in CI/CD
+  - run the unit tests inside the container image you're shipping 
+  - run the integration tests on the running container image you're shipping 
+  - use multi stage builds to strip out anything not required for production use
+
 ## Structure
 
 The app is split into an API and a client.
