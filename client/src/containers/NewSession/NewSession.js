@@ -11,15 +11,19 @@ class NewSession extends React.Component {
   }
 
   submit(values) {
-    const newValues = Object.assign({}, values, {
-      createdAt: new Date().toString(),
-    })
-    return this.props.postNewTimerSession(newValues, () => {
-      alert(
-        'Your session has been saved!\n\nPlease view your sessions by clicking on the `View Saved Sessions` button on the left.'
-      )
-      this.props.getTimerSessions()
-    })
+    return new Promise((resolve, reject) => {
+      return this.props.postNewTimerSession(values, (err) => {
+        if(!err) {
+          alert(
+            'Your session has been saved!\n\nPlease view your sessions by clicking on the `View Saved Sessions` button on the left.'
+          )
+          this.props.getTimerSessions();
+          resolve();
+        } else {
+          reject(err);
+        }
+      })
+    });
   }
 
   onViewChange() {

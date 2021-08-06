@@ -3,14 +3,27 @@ import { TIMER_SESSIONS_URL } from '../constants/timer/endpoints'
 import { SET_TIMER_SESSIONS } from '../constants/timer/reducerTypes'
 
 export function postNewTimerSession(data, callback) {
-  return function (dispatch) {
+  return function () {
     axios
       .post(TIMER_SESSIONS_URL, data)
       .then((response) => {
         callback()
       })
       .catch((err) => {
-        console.log(err)
+        callback(err)
+      })
+  }
+}
+
+export function deleteASession(sessionId, callback) {
+  return function () {
+    axios
+      .delete(`${TIMER_SESSIONS_URL}/${sessionId}`)
+      .then((response) => {
+        callback()
+      })
+      .catch((err) => {
+        callback(err)
       })
   }
 }

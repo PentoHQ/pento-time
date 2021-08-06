@@ -10,11 +10,25 @@ class Sessions extends React.Component {
     this.props.getTimerSessions()
   }
 
+  deleteSession(session) {
+    return new Promise((resolve, reject) => {
+      return this.props.deleteASession(session._id, (err) => {
+        if(!err) {
+          alert(`This session : ${session.name} was deleted`)
+          this.props.getTimerSessions();
+          resolve();
+        } else {
+          reject(err);
+        }
+      })
+    })
+  }
+
   render() {
     const { sessions } = this.props
     return (
       <PageContainer>
-        <TimerSessionsView sessions={sessions} />
+        <TimerSessionsView sessions={sessions} onSessionDelete={this.deleteSession.bind(this)} />
       </PageContainer>
     )
   }
