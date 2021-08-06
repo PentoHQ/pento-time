@@ -1,4 +1,5 @@
 # Pento Tech Challenge - Time tracker - Houssam Yahiaoui Intake
+![Alt text](img/pento-1.gif?raw=true "Delete Feature")
 
 ## Getting started
 
@@ -12,10 +13,12 @@ Before getting started you will need Docker, Docker Compose and Node on your sys
 This starts both the client and the server with automatic reloading when saving.
 
 ## Project Oulines and Requirements
-
 1. this project suffered from a bug within the **UI element responsible for saving the Session**.
 as it was expecting a Promise resolution, without actually having one returned from the parent function, this was fixed.
+![Alt text](img/pento-2.gif?raw=true "Delete Feature")
 2. I've took the liberty to add support to both **DB Persistance** and **Support to Delete** Functionalties.
+
+![Alt text](img/pento-3.gif?raw=true "Delete Feature")
 3. I've took the liberty to **restrcuture** the project structure to match **my developmenent style** and **seperation of concerns** + **folder** and **file** management to keep thing clean.
 
 ## Production Deployment steps
