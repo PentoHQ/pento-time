@@ -1,7 +1,7 @@
 import express from 'express'
 import createSessionsRouter from './sessions'
 
-export default function createRouter({ sessionStore }) {
+export default function createRouter () {
   const router = express.Router()
 
   router.use((req, res, next) => {
@@ -9,7 +9,7 @@ export default function createRouter({ sessionStore }) {
     return next()
   })
 
-  const sessionsRouter = createSessionsRouter({ sessionStore })
+  const sessionsRouter = createSessionsRouter()
   router.use('/sessions', sessionsRouter)
 
   return router
